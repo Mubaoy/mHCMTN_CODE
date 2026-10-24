@@ -1,6 +1,6 @@
 # mHCMTN_CODE
 
-代码仓库：[Mubaoy/mHCMTN_CODE](https://github.com/Mubaoy/mHCMTN_CODE) · 初始版本：`v0.1.0`
+代码仓库：[Mubaoy/mHCMTN_CODE](https://github.com/Mubaoy/mHCMTN_CODE) · 初始版本：[v0.1.0](https://github.com/Mubaoy/mHCMTN_CODE/tree/v0.1.0)
 
 可运行的 **mHCMTN 新实现**，包含数据准备、STL-LSTM 与预测基准、需求响应优化、优化基准、测试和绘图。这里的结果需要重新运行实验获得；本项目不声称恢复了旧图对应的模型权重或历史指标。
 
