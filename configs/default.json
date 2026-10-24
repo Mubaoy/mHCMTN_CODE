@@ -1,0 +1,23 @@
+{
+  "model": {
+    "d_model": 32, "nhead": 4, "num_layers": 2, "dim_feedforward": 64,
+    "token_count": 45, "dropout": 0.1, "manifold_weight": 0.1,
+    "hyper_beta": 0.5, "ffn_gamma": 0.3
+  },
+  "optimizer": {
+    "epochs": 1000, "learning_rate": 0.001, "tau_start": 1.0, "tau_end": 0.1,
+    "grad_clip": 1.0, "seed": 42, "device": "cpu", "population": 30, "iterations": 1000,
+    "ga_mutation": 0.1, "pso_w": 0.5, "pso_c1": 1.6, "pso_c2": 1.6,
+    "mlpo_hidden": 15, "mlpo_learning_rate": 0.01,
+    "iwo_max_population": 50, "iwo_min_seeds": 0, "iwo_max_seeds": 5,
+    "iwo_sigma_start": 0.5, "iwo_sigma_end": 0.001, "iwo_exponent": 3.0,
+    "wpa_scout_ratio": 0.2, "wpa_directions": 8, "wpa_walks": 5,
+    "wpa_step_a": 0.05, "wpa_step_b": 0.1, "wpa_step_c": 0.025,
+    "wpa_near": 0.05, "wpa_renew_ratio": 0.2
+  },
+  "forecast": {
+    "epochs": 50, "batch_size": 32, "learning_rate": 0.001, "patience": 10,
+    "hidden_size": 50, "baseline_hidden_size": 64, "dropout": 0.2,
+    "seed": 42, "lookback": 24, "device": "cpu"
+  }
+}

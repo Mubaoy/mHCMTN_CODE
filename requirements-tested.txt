@@ -1,0 +1,11 @@
+# Versions used for the local CPU validation, Python 3.13.9.
+# This is an environment snapshot, not a claim that historical experiments used it.
+torch==2.9.1
+numpy==2.2.3
+pandas==2.3.3
+statsmodels==0.14.6
+scikit-learn==1.7.2
+xgboost==3.1.2
+matplotlib==3.10.7
+openpyxl==3.1.5
+pytest==8.3.5

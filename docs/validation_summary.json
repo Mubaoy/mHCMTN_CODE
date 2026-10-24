@@ -1,0 +1,247 @@
+{
+  "date": "2026-10-22",
+  "status": "actual_local_software_validation_not_manuscript_performance_evidence",
+  "unit_tests_passed": 21,
+  "runtime": {
+    "python": "3.13.9",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "torch": "2.9.1",
+      "numpy": "2.2.3",
+      "pandas": "2.3.3",
+      "statsmodels": "0.14.6",
+      "scikit-learn": "1.7.2",
+      "xgboost": "3.1.2",
+      "matplotlib": "3.10.7"
+    },
+    "cuda_available": false
+  },
+  "data_rows": 5856,
+  "split_counts": {
+    "train": 4612,
+    "validation": 586,
+    "test": 586
+  },
+  "forecast_neural_epochs": 1,
+  "forecast_test_protocol": "rolling_one_step",
+  "forecast_test_metrics": {
+    "stl_lstm": {
+      "mse_w2": 710570.2969479316,
+      "rmse_w": 842.9533183681832,
+      "mae_w": 466.4889872278178,
+      "r2": 0.7922106624077394
+    },
+    "lstm": {
+      "mse_w2": 733592.8107937021,
+      "rmse_w": 856.5003273751284,
+      "mae_w": 549.3523552334223,
+      "r2": 0.785478277276713
+    },
+    "rf": {
+      "mse_w2": 202189.6675708849,
+      "rmse_w": 449.65505398125447,
+      "mae_w": 225.84129739703047,
+      "r2": 0.9408744535579256
+    },
+    "xgb": {
+      "mse_w2": 196193.1839475951,
+      "rmse_w": 442.9369977181801,
+      "mae_w": 217.47180466805568,
+      "r2": 0.9426279821888269
+    },
+    "svr": {
+      "mse_w2": 339272.77052488906,
+      "rmse_w": 582.4712615441977,
+      "mae_w": 378.93472798044496,
+      "r2": 0.9007877692703168
+    }
+  },
+  "recursive_planning": {
+    "forecast_origin_utc": "2024-03-08T16:00:00.000000000",
+    "horizon": 12,
+    "evaluation_scope": "one held-out recursive case; not an aggregate multi-origin result",
+    "protocol": "no future observations; persisted weather; recursive target feedback",
+    "models": {
+      "stl_lstm": {
+        "mse_w2": 2356819.468184427,
+        "rmse_w": 1535.1936256330753,
+        "mae_w": 1178.3831210879014,
+        "r2": 0.4532279652500093
+      },
+      "lstm": {
+        "mse_w2": 4607780.052074984,
+        "rmse_w": 2146.574026693462,
+        "mae_w": 1824.8335053647559,
+        "r2": -0.06898526118094139
+      },
+      "rf": {
+        "mse_w2": 416499.257888287,
+        "rmse_w": 645.367537057983,
+        "mae_w": 525.6249883498609,
+        "r2": 0.9033739538468462
+      },
+      "xgb": {
+        "mse_w2": 524215.76502319076,
+        "rmse_w": 724.027461511779,
+        "mae_w": 576.9331508211326,
+        "r2": 0.8783841849751202
+      },
+      "svr": {
+        "mse_w2": 180569.46785652172,
+        "rmse_w": 424.9346630442399,
+        "mae_w": 330.2674497067006,
+        "r2": 0.9581086558871265
+      }
+    }
+  },
+  "optimization_scope": "single held-out case; seed42; neural1000steps; population1000generations; initialpop30; unequal evaluation budgets; timings are validation-only",
+  "optimization_results": [
+    {
+      "method": "mhcmtn",
+      "data_kind": "public_dataset_held_out_case",
+      "seed": 42,
+      "objective": 0.1290093078370022,
+      "elapsed_seconds": 10.992928800056688,
+      "objective_evaluations": 3001,
+      "forecast_mse_w2": 1958567.2732714205,
+      "forecast_self_consumption_pct": 36.69640657020701,
+      "forecast_self_sufficiency_pct": 100.0,
+      "forecast_grid_import_kwh": 0.0,
+      "forecast_peak_grid_import_w": 0.0,
+      "forecast_grid_cost_currency": 0.0,
+      "forecast_energy_balance_error_wh": 0.0,
+      "forecast_minimum_load_w": 0.0,
+      "observed_mse_w2": 7628726.041666667,
+      "observed_self_consumption_pct": 23.49514563106796,
+      "observed_self_sufficiency_pct": 100.0,
+      "observed_grid_import_kwh": 0.0,
+      "observed_peak_grid_import_w": 0.0,
+      "observed_grid_cost_currency": 0.0,
+      "observed_energy_balance_error_wh": 0.0,
+      "observed_minimum_load_w": 0.0
+    },
+    {
+      "method": "ga",
+      "data_kind": "public_dataset_held_out_case",
+      "seed": 42,
+      "objective": 0.1246867109350507,
+      "elapsed_seconds": 1.00551190006081,
+      "objective_evaluations": 30030,
+      "forecast_mse_w2": 1892943.3507060555,
+      "forecast_self_consumption_pct": 36.69640657020701,
+      "forecast_self_sufficiency_pct": 100.0,
+      "forecast_grid_import_kwh": 0.0,
+      "forecast_peak_grid_import_w": 0.0,
+      "forecast_grid_cost_currency": 0.0,
+      "forecast_energy_balance_error_wh": 0.0,
+      "forecast_minimum_load_w": 0.0,
+      "observed_mse_w2": 7673753.389254615,
+      "observed_self_consumption_pct": 23.49514563106796,
+      "observed_self_sufficiency_pct": 100.0,
+      "observed_grid_import_kwh": 0.0,
+      "observed_peak_grid_import_w": 0.0,
+      "observed_grid_cost_currency": 0.0,
+      "observed_energy_balance_error_wh": 0.0,
+      "observed_minimum_load_w": 0.0
+    },
+    {
+      "method": "pso",
+      "data_kind": "public_dataset_held_out_case",
+      "seed": 42,
+      "objective": 0.1290815875024404,
+      "elapsed_seconds": 0.2174074000213295,
+      "objective_evaluations": 30030,
+      "forecast_mse_w2": 1959664.593996752,
+      "forecast_self_consumption_pct": 36.69640657020701,
+      "forecast_self_sufficiency_pct": 100.0,
+      "forecast_grid_import_kwh": 0.0,
+      "forecast_peak_grid_import_w": 0.0,
+      "forecast_grid_cost_currency": 0.0,
+      "forecast_energy_balance_error_wh": 0.0,
+      "forecast_minimum_load_w": 0.0,
+      "observed_mse_w2": 7644701.041666667,
+      "observed_self_consumption_pct": 23.49514563106796,
+      "observed_self_sufficiency_pct": 100.0,
+      "observed_grid_import_kwh": 0.0,
+      "observed_peak_grid_import_w": 0.0,
+      "observed_grid_cost_currency": 0.0,
+      "observed_energy_balance_error_wh": 0.0,
+      "observed_minimum_load_w": 0.0
+    },
+    {
+      "method": "mlpo",
+      "data_kind": "public_dataset_held_out_case",
+      "seed": 42,
+      "objective": 0.1980219102193758,
+      "elapsed_seconds": 2.3984965999843557,
+      "objective_evaluations": 3001,
+      "forecast_mse_w2": 3006288.76512057,
+      "forecast_self_consumption_pct": 31.78306641822699,
+      "forecast_self_sufficiency_pct": 86.61084119345611,
+      "forecast_grid_import_kwh": 1.1340617509142668,
+      "forecast_peak_grid_import_w": 655.838534325284,
+      "forecast_grid_cost_currency": 0.34021852527428,
+      "forecast_energy_balance_error_wh": 0.0,
+      "forecast_minimum_load_w": 0.0,
+      "observed_mse_w2": 9885966.666666666,
+      "observed_self_consumption_pct": 18.723994452149796,
+      "observed_self_sufficiency_pct": 79.69303423848878,
+      "observed_grid_import_kwh": 1.72,
+      "observed_peak_grid_import_w": 860.0,
+      "observed_grid_cost_currency": 0.516,
+      "observed_energy_balance_error_wh": 0.0,
+      "observed_minimum_load_w": 0.0
+    },
+    {
+      "method": "iwo",
+      "data_kind": "public_dataset_held_out_case",
+      "seed": 42,
+      "objective": 0.1246867108982674,
+      "elapsed_seconds": 0.3398332999786362,
+      "objective_evaluations": 120073,
+      "forecast_mse_w2": 1892943.350147627,
+      "forecast_self_consumption_pct": 36.69640657020701,
+      "forecast_self_sufficiency_pct": 100.0,
+      "forecast_grid_import_kwh": 0.0,
+      "forecast_peak_grid_import_w": 0.0,
+      "forecast_grid_cost_currency": 0.0,
+      "forecast_energy_balance_error_wh": 0.0,
+      "forecast_minimum_load_w": 0.0,
+      "observed_mse_w2": 7673762.953597343,
+      "observed_self_consumption_pct": 23.49514563106796,
+      "observed_self_sufficiency_pct": 100.0,
+      "observed_grid_import_kwh": 0.0,
+      "observed_peak_grid_import_w": 0.0,
+      "observed_grid_cost_currency": 0.0,
+      "observed_energy_balance_error_wh": 0.0,
+      "observed_minimum_load_w": 0.0
+    },
+    {
+      "method": "wpa",
+      "data_kind": "public_dataset_held_out_case",
+      "seed": 42,
+      "objective": 0.1429305334225337,
+      "elapsed_seconds": 1.815103100030683,
+      "objective_evaluations": 276030,
+      "forecast_mse_w2": 2169913.7047250303,
+      "forecast_self_consumption_pct": 36.20664390661906,
+      "forecast_self_sufficiency_pct": 98.66536615063129,
+      "forecast_grid_import_kwh": 0.1130434870415297,
+      "forecast_peak_grid_import_w": 113.04348704152972,
+      "forecast_grid_cost_currency": 0.0339130461124589,
+      "forecast_energy_balance_error_wh": 0.0,
+      "forecast_minimum_load_w": 0.0,
+      "observed_mse_w2": 8336207.5,
+      "observed_self_consumption_pct": 22.210818307905686,
+      "observed_self_sufficiency_pct": 94.5336481700118,
+      "observed_grid_import_kwh": 0.463,
+      "observed_peak_grid_import_w": 463.0,
+      "observed_grid_cost_currency": 0.1389,
+      "observed_energy_balance_error_wh": 0.0,
+      "observed_minimum_load_w": 0.0
+    }
+  ],
+  "checkpoint_recovery": "stored best decision exactly reproduces objective and scheduled load",
+  "raw_data_included": false,
+  "cuda_tested": false
+}

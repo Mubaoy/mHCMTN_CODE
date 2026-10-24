@@ -1,0 +1,9 @@
+{
+  "name": "synthetic_day_for_software_validation",
+  "data_kind": "synthetic_smoke_test_only_not_paper_evidence",
+  "pv_forecast_w": [0, 350, 900, 1500, 2100, 2600, 2800, 2600, 2100, 1500, 700, 0],
+  "baseline_load_w": [1800, 1700, 1600, 1200, 800, 600, 700, 900, 1200, 1600, 1800, 1900],
+  "step_hours": 1.0,
+  "initial_categories": [3, 3, 3, 2, 1, 1, 2, 1, 1, 1, 1, 3],
+  "initial_alphas": [0.13, 0.01, 0.12]
+}

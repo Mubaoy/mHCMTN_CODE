@@ -1,0 +1,7 @@
+{
+  "model": {
+    "d_model": 64, "nhead": 8, "num_layers": 2, "dim_feedforward": 256,
+    "token_count": 45, "dropout": 0.1, "manifold_weight": 0.1,
+    "hyper_beta": 0.5, "ffn_gamma": 0.3
+  }
+}
