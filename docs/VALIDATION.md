@@ -3,9 +3,11 @@
 Publication recheck, 2026-10-24: version v0.1.1 has **24 locally passing tests**,
 including three ns/us/ms datetime-resolution regressions added after GitHub CI
 exposed a pandas 3 interval-unit mismatch. See [CHANGELOG.md](../CHANGELOG.md).
+GitHub's Linux CPU jobs also passed on Python 3.11 and 3.13 for the fixed code
+commit `f0d7861ed0825e396a0b7fc34ba09f75a22a68ea`:
+[successful hosted test run](https://github.com/Mubaoy/mHCMTN_CODE/actions/runs/40074097771).
 The source experiment measurements below retain their original 2026-10-22 date
-and tested pandas 2.3.3 environment. Current hosted test results are available
-at [GitHub Actions](https://github.com/Mubaoy/mHCMTN_CODE/actions).
+and tested pandas 2.3.3 environment.
 
 Completed on 2026-10-22. These are actual software execution checks, not recovered
 historical experiments or evidence that mHCMTN is superior to its baselines.

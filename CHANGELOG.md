@@ -11,7 +11,9 @@ assumption produced a 0.001-hour step for hourly data. The original local
 pandas 2.3.3 checks had nanosecond timestamps and did not expose this case.
 Added three regression cases verifying that ns/us/ms timestamp storage all
 produce a one-hour step and the correct 1000 W per hourly kWh conversion.
-The updated local test suite has 24 passing tests.
+The updated test suite has 24 passing tests locally. Both GitHub Linux CPU jobs
+also passed on Python 3.11 and 3.13:
+[test run](https://github.com/Mubaoy/mHCMTN_CODE/actions/runs/40074097771).
 
 Reference: pandas documents the change in
 [datetime resolution inference](https://pandas.pydata.org/pandas-docs/stable/whatsnew/v3.0.0.html#datetime-timedelta-resolution-inference).

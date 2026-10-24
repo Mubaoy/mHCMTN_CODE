@@ -87,7 +87,7 @@ docs/         方法、来源、实现计划、验证记录和可用性声明模
 
 运行产生的数据、权重和结果由 `.gitignore` 排除。许可证状态见 [LICENSE_NOTICE.md](LICENSE_NOTICE.md)，仓库维护说明见 [PUBLISHING.md](docs/PUBLISHING.md)。已填入仓库链接的代码可用性声明见 [CODE_AVAILABILITY.txt](CODE_AVAILABILITY.txt) 和 [AVAILABILITY_TEMPLATE.md](docs/AVAILABILITY_TEMPLATE.md)。
 
-已完成 24 项本地测试、真实数据上的五模型短程预测、六种优化器的默认 1000 步检查，以及 checkpoint 恢复。完整记录与实验边界见 [VALIDATION.md](docs/VALIDATION.md)，独立代码检查记录见 [CODE_REVIEW.md](docs/CODE_REVIEW.md)，版本变化见 [CHANGELOG.md](CHANGELOG.md)。
+已完成 24 项本地测试，GitHub 上的 Python 3.11、3.13 两套 CPU 测试也已通过。另已完成真实数据上的五模型短程预测、六种优化器的默认 1000 步检查，以及 checkpoint 恢复。完整记录与实验边界见 [VALIDATION.md](docs/VALIDATION.md)，独立代码检查记录见 [CODE_REVIEW.md](docs/CODE_REVIEW.md)，版本变化见 [CHANGELOG.md](CHANGELOG.md)。
 
 English summary: This repository contains a newly implemented, instance-specific
 manifold-aware hyperconnection optimizer and causal STL-LSTM forecasting pipeline.

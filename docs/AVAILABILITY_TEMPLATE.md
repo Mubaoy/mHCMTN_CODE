@@ -13,7 +13,8 @@ The selected columns and provenance verification are described in
 
 The preprocessing scripts, chronological train/validation/test split indices,
 and code for the mHCMTN optimization and forecasting pipeline are available at
-https://github.com/Mubaoy/mHCMTN_CODE (version: v0.1.1).
+https://github.com/Mubaoy/mHCMTN_CODE (version: v0.1.1; commit:
+`f0d7861ed0825e396a0b7fc34ba09f75a22a68ea`).
 
 The release documents the newly implemented method and its validation scope.
 It does not assert recovery of historical model weights or manuscript results.
