@@ -2,7 +2,8 @@
 
 Repository: https://github.com/Mubaoy/mHCMTN_CODE
 
-Initial version: `v0.1.0`. The repository root contains the contents of the local
+Initial version: `v0.1.0`; current version: `v0.1.1` (datetime-resolution fix).
+The repository root contains the contents of the local
 `mHCMTN_CODE` directory, not its surrounding workspace. Raw workbooks, weights,
 experiment caches and local credentials are excluded. The source is independent
 of its parent directory.

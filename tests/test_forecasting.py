@@ -1,9 +1,10 @@
 import json
 import numpy as np
+import pandas as pd
 import pytest
 
 from mhcmtn.__main__ import load_case
-from mhcmtn.data import causal_stl, chronological_split, load_prepared
+from mhcmtn.data import causal_stl, chronological_split, load_prepared, prepare_data
 from mhcmtn.forecasting import MinMax, load_forecasters, make_windows, recursive_prediction
 from mhcmtn.utils import regression_metrics
 
@@ -33,6 +34,26 @@ def test_scaler_does_not_refit_to_test_extremes():
     scaler = MinMax().fit(np.array([[1.], [3.]]))
     assert scaler.transform([[1000.]])[0, 0] == 499.5
     np.testing.assert_allclose(MinMax.restore(scaler.serialize()).inverse([[.5]]), [[2.]])
+
+
+@pytest.mark.parametrize("resolution", ["ns", "us", "ms"])
+def test_hourly_energy_conversion_does_not_depend_on_datetime_storage_unit(tmp_path, monkeypatch, resolution):
+    rows = 96
+    energy = 1 + .1 * np.sin(np.arange(rows))
+    frame = pd.DataFrame({"datetime": pd.date_range("2023-08-01", periods=rows, freq="h"),
+                          "temp": np.full(rows, 70), "humidity": np.full(rows, 40),
+                          "solarradiation": np.full(rows, 100),
+                          "Home Usage (kWh)": energy, "Solar Production (kWh)": energy})
+    source = tmp_path / "source.csv"
+    frame.to_csv(source, index=False)
+    convert = pd.to_datetime
+    monkeypatch.setattr(pd, "to_datetime", lambda values: convert(values).dt.as_unit(resolution))
+    output = tmp_path / "prepared"
+    meta = prepare_data(output, source=source, timezone="UTC", stl_window=48)
+    arrays, _, _ = load_prepared(output)
+    assert meta["step_hours"] == 1.0
+    assert meta["conversion_to_average_w"] == 1000.0
+    np.testing.assert_allclose(arrays["pv_w"], energy * 1000, atol=1e-9)
 
 
 def test_dst_is_resolved_without_dropping_observations(forecast_run):

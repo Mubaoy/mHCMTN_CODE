@@ -1,6 +1,6 @@
 # mHCMTN_CODE
 
-代码仓库：[Mubaoy/mHCMTN_CODE](https://github.com/Mubaoy/mHCMTN_CODE) · 初始版本：[v0.1.0](https://github.com/Mubaoy/mHCMTN_CODE/tree/v0.1.0)
+代码仓库：[Mubaoy/mHCMTN_CODE](https://github.com/Mubaoy/mHCMTN_CODE) · 当前版本：[v0.1.1](https://github.com/Mubaoy/mHCMTN_CODE/tree/v0.1.1)
 
 可运行的 **mHCMTN 新实现**，包含数据准备、STL-LSTM 与预测基准、需求响应优化、优化基准、测试和绘图。这里的结果需要重新运行实验获得；本项目不声称恢复了旧图对应的模型权重或历史指标。
 
@@ -87,7 +87,7 @@ docs/         方法、来源、实现计划、验证记录和可用性声明模
 
 运行产生的数据、权重和结果由 `.gitignore` 排除。许可证状态见 [LICENSE_NOTICE.md](LICENSE_NOTICE.md)，仓库维护说明见 [PUBLISHING.md](docs/PUBLISHING.md)。已填入仓库链接的代码可用性声明见 [CODE_AVAILABILITY.txt](CODE_AVAILABILITY.txt) 和 [AVAILABILITY_TEMPLATE.md](docs/AVAILABILITY_TEMPLATE.md)。
 
-已完成 21 项测试、真实数据上的五模型短程预测、六种优化器的默认 1000 步检查，以及 checkpoint 恢复。完整记录与实验边界见 [VALIDATION.md](docs/VALIDATION.md)，独立代码检查记录见 [CODE_REVIEW.md](docs/CODE_REVIEW.md)。
+已完成 24 项本地测试、真实数据上的五模型短程预测、六种优化器的默认 1000 步检查，以及 checkpoint 恢复。完整记录与实验边界见 [VALIDATION.md](docs/VALIDATION.md)，独立代码检查记录见 [CODE_REVIEW.md](docs/CODE_REVIEW.md)，版本变化见 [CHANGELOG.md](CHANGELOG.md)。
 
 English summary: This repository contains a newly implemented, instance-specific
 manifold-aware hyperconnection optimizer and causal STL-LSTM forecasting pipeline.

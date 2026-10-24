@@ -88,7 +88,9 @@ def prepare_data(output: Path, source: Path | None = None, period=24, stl_window
     aware = (local_dates.tz_localize(timezone, ambiguous="infer", nonexistent="raise")
              if local_dates.tz is None else local_dates)
     dates = aware.tz_convert("UTC").tz_localize(None)
-    intervals = np.diff(dates.asi8) / 3.6e12
+    # pandas 3 may store microseconds; asi8 is not always nanoseconds.
+    # Divide timedeltas by an explicit hour instead of assuming integer units.
+    intervals = np.asarray((dates[1:] - dates[:-1]) / pd.Timedelta(hours=1), dtype=float)
     if len(intervals) == 0 or not np.allclose(intervals, intervals[0]) or intervals[0] <= 0:
         raise ValueError("Dates must be unique, sorted and uniformly spaced; no implicit interpolation is performed.")
     numeric = frame[COLUMNS[1:]].to_numpy(dtype=float)
